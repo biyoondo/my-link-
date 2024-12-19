@@ -1,0 +1,132 @@
+body {
+    font-size: 15pt;
+}
+/* Основной стиль */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: black;
+    color: #9B111E;
+    overflow: hidden;
+}
+
+/* Шапка */
+header {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #9B111E;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #9B111E;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+/* Основной контент */
+main {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+main p {
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+/* Футер */
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #9B111E;
+    font-size: 1.2em;
+}
+
+/* Эффект матрицы */
+.matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background: black;
+}
+
+@keyframes rain {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+
+.matrix:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        #9B111E 0%,
+        #9B111E 1px,
+        transparent 2px,
+        transparent 10%
+    );
+    animation: rain 1.5s infinite linear;
+}
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 20px auto;
+    background-color: #9B111E; /* Зеленый цвет фона */
+    color: #000000; /* Черный цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    border: 2px solid #9B111E; /* Зеленая рамка */
+    border-radius: 5px; /* Округлые углы */
+    text-align: center;
+    box-shadow: 0 0 10px #9B111E, 0 0 20px #9B111E; /* Эффект свечения */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.button:hover {
+    background-color: #1c1c1c; /* Цвет фона при наведении */
+    color: #9B111E; /* Цвет текста при наведении */
+    box-shadow: 0 0 20px #9B111E, 0 0 30px #9B111E; /* Усиление свечения при наведении */
+}
+body {
+    filter: brightness(1.5); /* Увеличиваем яркость на 50% */
+}
